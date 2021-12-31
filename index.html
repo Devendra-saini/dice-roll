@@ -19,9 +19,9 @@
        </div>
        <div class="container">
           <div class="firstrow" >
-         <div class ="left" > Selected Variable: <span id="clicked"></span> </div>
+         <div class ="left" > Selected Variable : <span id="clicked"></span> </div>
          <div class="middle" > <img src="image/1.png" id="icon"> </div>
-         <div class="right" > Score :<span id="score">0 </span>  </div>
+         <div class="right" > Score : <span id="score">0 </span>  </div>
           </div>
           <div class="secondrow ">
               <div><button onclick=clickedButton(1) >1</button></div>
@@ -38,9 +38,9 @@
        
         <div class="massage">
               
-                The dice will change in <span id="timer"></span >  seconds
+                The dice will change in <span id="timer"></span >  seconds.
         </div>
-        <div class="massage" id="match"> </div>
+        <div class="result" id="match"> </div>
 
        </div>
     </div>
@@ -58,7 +58,8 @@
                 },1000);
     }
 showTimer()
-var y=0 
+
+var y 
  function clickedButton(b)
        {
            var clicked=document.getElementById("clicked") 
@@ -68,22 +69,23 @@ var y=0
       
     var score= document.getElementById("score")
     
-    clickedButton(0)
+   clickedButton(0)
 function getNumber(){
-         
-        
-      showTimer()
-        var d=  Math.floor((Math.random() * 6) + 1);
-        var icon=   document.getElementById("icon")
-            if(d==1) {icon.src= "image/1.png";}
-            if(d==2) {icon.src="image/2.png";}
-            if(d==3){ icon.src= "image/3.png";}
-            if(d==4){icon.src= "image/4.png" ;}
-            if(d==5) {icon.src="image/5.png";}
-             if(d==6){ icon.src="image/6.png";}
+          showTimer()
+          var d=  Math.floor((Math.random() * 6) + 1);
+         var icon=   document.getElementById("icon")
+         if(d==1) {icon.src= "image/1.png";}
+         if(d==2) {icon.src="image/2.png";}
+         if(d==3){ icon.src= "image/3.png";}
+         if(d==4){icon.src= "image/4.png" ;}
+         if(d==5) {icon.src="image/5.png";}
+         if(d==6){ icon.src="image/6.png";}
         var match=document.getElementById("match")
-             if(y==d){match.innerHTML="Your guess was right"; score.innerHTML++ }
-             else {match.innerHTML="";}
+        if(y!=0){
+             if(y===d){match.innerHTML="Your guess was right!"; score.innerHTML++ }
+             else {match.innerHTML="Your guess was wrong!";}
+        }
+        else {match.innerHTML="";}
              clickedButton(0)
       }
       
