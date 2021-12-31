@@ -21,7 +21,7 @@
 .navbar p{
     
     padding: 10px;
-    font-size: 30px;
+    font-size: 2rem;
 }
 .navbar {
     
@@ -29,7 +29,7 @@
 }
 
 .firstrow  {
-    font-size: 30px;
+    font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     
@@ -88,8 +88,15 @@ button {
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
+    
   }
   .massage{
+      margin-top: 50px;
+      font-size: 20px;
+      text-align: center;
+  }
+  .result{
+      background-color: #F2AA4cFF;
       margin-top: 50px;
       font-size: 20px;
       text-align: center;
